@@ -1,3 +1,10 @@
+import { AuthProvider } from "./context/AuthContext";
+import { AppRouter } from "./routes/Router";
+
 export default function App() {
-  return <div>ONAMI Frontend funcionando ✅</div>;
+  return (
+    <AuthProvider>
+      <AppRouter/>
+    </AuthProvider>
+  );
 }
