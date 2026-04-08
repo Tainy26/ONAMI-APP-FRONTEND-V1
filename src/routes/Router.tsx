@@ -4,6 +4,7 @@ import { RoleRoute } from "./RoleRoute";
 import { LoginPage } from "../pages/auth/LoginPage";
 import { TrainerDashboardPage } from "../pages/auth/trainer/trainerDashboradPage";
 import { AthleteDashboardPage } from "../pages/auth/athlete/athleteDashboardPage";
+import { RegisterPage } from "../pages/auth/RegisterPage";
 
 export function AppRouter() {
   return (
@@ -38,6 +39,7 @@ export function AppRouter() {
 
         //REDIRIGIR LA RAIZ AL LOGIN
         <Route path="/" element={<Navigate to="/login" replace/>}/>
+        <Route path="/register" element={<RegisterPage />} />
       </Routes>
     </BrowserRouter>
   );

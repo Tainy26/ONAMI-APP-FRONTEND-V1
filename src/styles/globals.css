@@ -1,0 +1,110 @@
+/* ======== ONAMI - DISEÑO GLOBAL ======= */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');
+
+/* TEMA OSCURO (POR DEFECTO) */
+:root {
+    /* FONDOS */
+  --color-bg:          #0f1117;
+  --color-surface:     #1a1d27;
+  --color-surface-2:   #22263a;
+  --color-border:      #2e3248;
+
+  /* TEXTOS */
+  --color-text:        #e8eaf6;
+  --color-text-muted:  #7b82a8;
+
+  /* ACENTO PRINCIPAL — ONAMI */
+  --color-accent:      #4f8ef7;
+  --color-accent-hover:#3a7be8;
+
+  /* ESTADOS */
+  --color-error:       #f87171;
+  --color-success:     #4ade80;
+  --color-warning:     #fbbf24;
+
+  /* ESPACIADO Y FORMA */
+  --radius-sm:         6px;
+  --radius-md:         10px;
+  --radius-lg:         16px;
+
+  /* SOMBRA */
+  --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* TEMA CLARO - SE ACTIVA CON LA CLASE "LIGHT" */
+html.light {
+  --color-bg:          #f0f2f9;
+  --color-surface:     #ffffff;
+  --color-surface-2:   #e8eaf6;
+  --color-border:      #d0d4e8;
+
+  --color-text:        #1a1d27;
+  --color-text-muted:  #5a6080;
+
+  --color-accent:      #3a7be8;
+  --color-accent-hover:#2d6dd4;
+
+  --color-error:       #dc2626;
+  --color-success:     #16a34a;
+  --color-warning:     #d97706;
+
+  --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.10);
+}
+
+/* RESET Y BASE */
+*, *::before, *::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Sora', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+/* TIPOGRAFIA BASE */
+h1 { 
+  font-size: 1.75rem; 
+  font-weight: 700; 
+}
+
+h2 { 
+  font-size: 1.4rem;  
+  font-weight: 600; 
+}
+
+h3 { 
+  font-size: 1.1rem;  
+  font-weight: 600; 
+}
+
+p { 
+  line-height: 1.6; 
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
+}
