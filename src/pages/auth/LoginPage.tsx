@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { useTheme } from "../../hooks/useTheme";
+import { FaSun, FaMoon, FaApple, FaGoogle, FaBolt } from "react-icons/fa";
+import onamiLogo from "../../assets/onamilogo.png";
 import "./login.css";
 
 export function LoginPage() {
@@ -47,7 +49,9 @@ export function LoginPage() {
       <div className="auth-card">
 
         <div className="auth-logo">
-          <div className="auth-logo-icon">⚡</div>
+          <div className="auth-logo-icon">
+            <img src={onamiLogo} alt="Onami Logo" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+          </div>
           <div className="auth-logo-text">
             <h2>Bienvenido de nuevo</h2>
             <p>Introduce tus datos para entrar.</p>
@@ -103,10 +107,10 @@ export function LoginPage() {
 
           <div className="social-buttons">
           <button type="button" className="btn-social" onClick={() => alert("Próximamente disponible")}>
-              🍎 Apple
+              <FaApple size="1.4em" color={theme === "dark" ? "white" : "black"} />
           </button>
-          <button type="button" className="btn-social" onClick={() => alert("Próximamente disponible")}>
-              <span style={{ fontWeight: 700, fontSize: "15px" }}>G</span> Google
+          <button type="button" className="btn-social" style={{color: "blue" }} onClick={() => alert("Próximamente disponible")}>
+              <FaGoogle size="1.2em" style={{color: "red"}}/>
           </button>
           </div>
 
