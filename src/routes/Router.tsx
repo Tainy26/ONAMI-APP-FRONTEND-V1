@@ -1,31 +1,75 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ProtectedRoute } from "./ProtectedRoute";
 import { RoleRoute } from "./RoleRoute";
+
 import { LoginPage } from "../pages/auth/LoginPage";
-import { TrainerDashboardPage } from "../pages/auth/trainer/trainerDashboradPage";
-import { AthleteDashboardPage } from "../pages/auth/athlete/athleteDashboardPage";
 import { RegisterPage } from "../pages/auth/RegisterPage";
+
+import { TrainerDashboardPage } from "../pages/trainer/TrainerDashboard";
+import { AthleteDashboardPage } from "../pages/athlete/AthleteDashboard";
 
 export function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        //RUTA PÚBLICA
-        <Route path="/login" element={<LoginPage/>}/>
-          
-        //RUTAS PROTEGIDAS DEL TRAINER
+
+        {/* RUTAS PÚBLICAS */}
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+
+        {/* RUTAS PROTEGIDAS DEL TRAINER */}
         <Route
           path="/trainer/dashboard"
           element={
             <ProtectedRoute>
               <RoleRoute role="trainer">
-                <TrainerDashboardPage/>
+                <TrainerDashboardPage />
+              </RoleRoute>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/trainer/teams"
+          element={
+            <ProtectedRoute>
+              <RoleRoute role="trainer">
+                <div>Equipos — próximamente</div>
+              </RoleRoute>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/trainer/sessions"
+          element={
+            <ProtectedRoute>
+              <RoleRoute role="trainer">
+                <div>Sesiones — próximamente</div>
+              </RoleRoute>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/trainer/athletes"
+          element={
+            <ProtectedRoute>
+              <RoleRoute role="trainer">
+                <div>Atletas — próximamente</div>
+              </RoleRoute>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/trainer/profile"
+          element={
+            <ProtectedRoute>
+              <RoleRoute role="trainer">
+                <div>Perfil — próximamente</div>
               </RoleRoute>
             </ProtectedRoute>
           }
         />
 
-        //RUTAS PROTEGIDAS DEL ATHLETE
+        {/* RUTAS PROTEGIDAS DEL ATHLETE */}
         <Route
           path="/athlete/dashboard"
           element={
@@ -37,9 +81,12 @@ export function AppRouter() {
           }
         />
 
-        //REDIRIGIR LA RAIZ AL LOGIN
-        <Route path="/" element={<Navigate to="/login" replace/>}/>
-        <Route path="/register" element={<RegisterPage />} />
+        {/* REDIRIGIR LA RAÍZ AL LOGIN */}
+        <Route path="/" element={<Navigate to="/login" replace />} />
+
+        {/* RUTA 404 — cualquier URL desconocida va al login */}
+        <Route path="*" element={<Navigate to="/login" replace />} />
+
       </Routes>
     </BrowserRouter>
   );
