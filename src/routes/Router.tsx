@@ -6,6 +6,11 @@ import { LoginPage } from "../pages/auth/LoginPage";
 import { RegisterPage } from "../pages/auth/RegisterPage";
 
 import { TrainerDashboardPage } from "../pages/trainer/TrainerDashboard";
+import { TeamsPage } from "../pages/trainer/TeamsPage";
+import { SessionsPage } from "../pages/trainer/SessionsPage";
+import { AthletesPage } from "../pages/trainer/AthletesPage";
+import { ProfilePage } from "../pages/trainer/ProfilePage";
+
 import { AthleteDashboardPage } from "../pages/athlete/AthleteDashboard";
 
 export function AppRouter() {
@@ -33,7 +38,7 @@ export function AppRouter() {
           element={
             <ProtectedRoute>
               <RoleRoute role="trainer">
-                <div>Equipos — próximamente</div>
+                <TeamsPage />
               </RoleRoute>
             </ProtectedRoute>
           }
@@ -43,7 +48,7 @@ export function AppRouter() {
           element={
             <ProtectedRoute>
               <RoleRoute role="trainer">
-                <div>Sesiones — próximamente</div>
+                <SessionsPage />
               </RoleRoute>
             </ProtectedRoute>
           }
@@ -53,7 +58,7 @@ export function AppRouter() {
           element={
             <ProtectedRoute>
               <RoleRoute role="trainer">
-                <div>Atletas — próximamente</div>
+                <AthletesPage />
               </RoleRoute>
             </ProtectedRoute>
           }
@@ -63,7 +68,7 @@ export function AppRouter() {
           element={
             <ProtectedRoute>
               <RoleRoute role="trainer">
-                <div>Perfil — próximamente</div>
+                <ProfilePage />
               </RoleRoute>
             </ProtectedRoute>
           }
@@ -75,7 +80,37 @@ export function AppRouter() {
           element={
             <ProtectedRoute>
               <RoleRoute role="athlete">
-                <AthleteDashboardPage/>
+                <AthleteDashboardPage />
+              </RoleRoute>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/athlete/daily-load"
+          element={
+            <ProtectedRoute>
+              <RoleRoute role="athlete">
+                <div>Carga diaria — próximamente</div>
+              </RoleRoute>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/athlete/sessions"
+          element={
+            <ProtectedRoute>
+              <RoleRoute role="athlete">
+                <div>Sesiones atleta — próximamente</div>
+              </RoleRoute>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/athlete/profile"
+          element={
+            <ProtectedRoute>
+              <RoleRoute role="athlete">
+                <div>Perfil atleta — próximamente</div>
               </RoleRoute>
             </ProtectedRoute>
           }
@@ -84,7 +119,7 @@ export function AppRouter() {
         {/* REDIRIGIR LA RAÍZ AL LOGIN */}
         <Route path="/" element={<Navigate to="/login" replace />} />
 
-        {/* RUTA 404 — cualquier URL desconocida va al login */}
+        {/* RUTA 404 */}
         <Route path="*" element={<Navigate to="/login" replace />} />
 
       </Routes>

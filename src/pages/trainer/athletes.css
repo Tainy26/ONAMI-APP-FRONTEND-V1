@@ -1,0 +1,314 @@
+/* FILTROS */
+.athletes-filters {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.athletes-filter-select {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 10px;
+  color: var(--color-text-muted);
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+.athletes-filter-select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+.athletes-filter-sep {
+  width: 1px;
+  height: 14px;
+  background: var(--color-border);
+  flex-shrink: 0;
+}
+.athletes-filter-pill {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+.athletes-filter-pill:hover {
+  color: var(--color-text);
+}
+.athletes-filter-pill.active {
+  background: rgba(232, 82, 10, 0.15);
+  color: var(--color-accent);
+  border-color: rgba(232, 82, 10, 0.25);
+}
+
+/* LAYOUT TABLA + DETALLE */
+.athletes-layout {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+  min-height: 0;
+}
+
+/* TABLA */
+.athletes-table-wrap {
+  flex: 1;
+  min-width: 0;
+}
+.athletes-table {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.athletes-table-head {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 80px;
+  gap: 8px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface-2);
+}
+.athletes-th {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+.athlete-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 80px;
+  gap: 8px;
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--color-surface-2);
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.athlete-row:last-child {
+  border-bottom: none;
+}
+.athlete-row:hover {
+  background: var(--color-surface-2);
+}
+.athlete-row.selected {
+  background: rgba(232, 82, 10, 0.06);
+  border-left: 2px solid var(--color-accent);
+}
+
+/* IDENTIDAD */
+.athlete-identity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.athlete-avatar {
+  width: 32px;
+  height: 32px;
+  background: var(--gradient-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-accent);
+  position: relative;
+  overflow: hidden;
+}
+.athlete-avatar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.15), transparent);
+  pointer-events: none;
+}
+.athlete-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.athlete-email {
+  font-size: 10px;
+  color: var(--color-text-muted);
+  margin-top: 1px;
+}
+
+/* ALERTA DOT */
+.alert-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--color-error);
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 5px rgba(239, 68, 68, 0.6);
+}
+
+/* TD */
+.athlete-td {
+  font-size: 12px;
+  color: var(--color-text);
+}
+.athlete-td.muted {
+  color: var(--color-text-muted);
+}
+.athlete-fatigue {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ACCIONES */
+.athlete-actions {
+  display: flex;
+  gap: 5px;
+}
+
+/* PANEL DETALLE */
+.athlete-detail-panel {
+  width: 280px;
+  flex-shrink: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+}
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-border);
+}
+.detail-big-avatar {
+  width: 46px;
+  height: 46px;
+  background: var(--gradient-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-accent);
+  position: relative;
+  overflow: hidden;
+}
+.detail-big-avatar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.15), transparent);
+  pointer-events: none;
+}
+.detail-athlete-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 3px;
+}
+.detail-athlete-meta {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+/* STATS GRID */
+.detail-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+.detail-stat-box {
+  background: var(--color-surface-2);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  border: 1px solid var(--color-border);
+}
+.detail-stat-label {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin-bottom: 5px;
+}
+.detail-stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* TENDENCIA */
+.detail-trend {
+  background: var(--color-surface-2);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.detail-trend-label {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+.detail-trend-value {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* EMPTY DETAIL */
+.detail-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  text-align: center;
+}
+.detail-empty-icon {
+  font-size: 28px;
+  opacity: 0.3;
+}
+
+/* MODAL ELIMINAR */
+.delete-modal-athlete {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.delete-modal-athlete-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+.delete-modal-athlete-meta {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}

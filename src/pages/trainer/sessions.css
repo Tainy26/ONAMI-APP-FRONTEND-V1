@@ -1,0 +1,244 @@
+/* FILTROS */
+.sessions-filters {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.sessions-filter-select {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 10px;
+  color: var(--color-text-muted);
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+.sessions-filter-select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+.sessions-filter-sep {
+  width: 1px;
+  height: 14px;
+  background: var(--color-border);
+  flex-shrink: 0;
+}
+.sessions-filter-pill {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+.sessions-filter-pill:hover {
+  color: var(--color-text);
+}
+.sessions-filter-pill.active {
+  background: rgba(232, 82, 10, 0.15);
+  color: var(--color-accent);
+  border-color: rgba(232, 82, 10, 0.25);
+}
+
+/* LISTA */
+.sessions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* SEPARADOR DE FECHA */
+.sessions-date-sep {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0 2px;
+}
+.sessions-date-sep-line {
+  flex: 1;
+  height: 1px;
+  background: var(--color-surface-2);
+}
+.sessions-date-sep-text {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-border);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+/* FILA DE SESIÓN */
+.session-row {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.session-row:hover {
+  border-color: var(--color-accent);
+  background: var(--color-surface-2);
+}
+.session-row.expanded {
+  border-color: var(--color-accent);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
+}
+
+/* FECHA BOX */
+.session-date-box {
+  width: 38px;
+  height: 38px;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.session-date-day {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+}
+.session-date-month {
+  font-size: 8px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* INFO */
+.session-info {
+  flex: 1;
+  min-width: 0;
+}
+.session-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.session-meta {
+  font-size: 10px;
+  color: var(--color-text-muted);
+}
+
+/* BADGE */
+.session-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+/* ACCIONES */
+.session-actions {
+  display: flex;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+/* EJERCICIOS EXPANDIDOS */
+.exercises-wrap {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-accent);
+  border-top: none;
+  border-bottom-left-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 2px;
+}
+.exercises-head {
+  padding: 10px 14px;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.exercises-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+.exercises-add-btn {
+  background: rgba(232, 82, 10, 0.12);
+  border: 1px solid rgba(232, 82, 10, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-accent);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+.exercises-add-btn:hover {
+  background: rgba(232, 82, 10, 0.2);
+}
+.exercise-row {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--color-surface);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.exercise-row:last-child {
+  border-bottom: none;
+}
+.exercise-order {
+  width: 22px;
+  height: 22px;
+  background: rgba(232, 82, 10, 0.15);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+.exercise-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text);
+  flex: 1;
+}
+.exercise-meta {
+  font-size: 10px;
+  color: var(--color-text-muted);
+}
+.exercise-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+/* EMPTY STATE */
+.exercises-empty {
+  padding: 16px 14px;
+  font-size: 11px;
+  color: var(--color-text-muted);
+  text-align: center;
+}

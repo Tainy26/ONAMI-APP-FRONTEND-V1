@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { useTheme } from "../../hooks/useTheme";
-import { FaSun, FaMoon, FaApple, FaGoogle, FaBolt } from "react-icons/fa";
+import { FaApple, FaGoogle } from "react-icons/fa";
 import onamiLogo from "../../assets/onamilogo.png";
 import "./login.css";
 
@@ -17,13 +17,17 @@ export function LoginPage() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  if (user) {
-    navigate(user.role === "trainer"
-      ? "/trainer/dashboard"
-      : "/athlete/dashboard",
-      { replace: true }
-    );
-  }
+  /* REDIRECCIÓN — solo cuando el usuario cambia */
+  useEffect(() => {
+    if (user) {
+      navigate(
+        user.role === "trainer"
+          ? "/trainer/dashboard"
+          : "/athlete/dashboard",
+        { replace: true }
+      );
+    }
+  }, [user]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -50,7 +54,11 @@ export function LoginPage() {
 
         <div className="auth-logo">
           <div className="auth-logo-icon">
-            <img src={onamiLogo} alt="Onami Logo" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+            <img
+              src={onamiLogo}
+              alt="Onami Logo"
+              style={{ width: "100%", height: "100%", objectFit: "contain" }}
+            />
           </div>
           <div className="auth-logo-text">
             <h2>Bienvenido de nuevo</h2>
@@ -106,12 +114,23 @@ export function LoginPage() {
           <div className="social-divider">O continúa con</div>
 
           <div className="social-buttons">
-          <button type="button" className="btn-social" onClick={() => alert("Próximamente disponible")}>
-              <FaApple size="1.4em" color={theme === "dark" ? "white" : "black"} />
-          </button>
-          <button type="button" className="btn-social" style={{color: "blue" }} onClick={() => alert("Próximamente disponible")}>
-              <FaGoogle size="1.2em" style={{color: "red"}}/>
-          </button>
+            <button
+              type="button"
+              className="btn-social"
+              onClick={() => alert("Próximamente disponible")}
+            >
+              <FaApple
+                size="1.4em"
+                color={theme === "dark" ? "white" : "black"}
+              />
+            </button>
+            <button
+              type="button"
+              className="btn-social"
+              onClick={() => alert("Próximamente disponible")}
+            >
+              <FaGoogle size="1.2em" style={{ color: "red" }} />
+            </button>
           </div>
 
         </form>
