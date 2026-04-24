@@ -12,6 +12,7 @@ import { AthletesPage } from "../pages/trainer/AthletesPage";
 import { ProfilePage } from "../pages/trainer/ProfilePage";
 
 import { AthleteDashboardPage } from "../pages/athlete/AthleteDashboard";
+import { DailyLoadPage } from "../pages/athlete/DailyLoadPage";
 
 export function AppRouter() {
   return (
@@ -90,7 +91,7 @@ export function AppRouter() {
           element={
             <ProtectedRoute>
               <RoleRoute role="athlete">
-                <div>Carga diaria — próximamente</div>
+                <DailyLoadPage/>
               </RoleRoute>
             </ProtectedRoute>
           }
