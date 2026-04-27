@@ -13,6 +13,8 @@ import { ProfilePage } from "../pages/trainer/ProfilePage";
 
 import { AthleteDashboardPage } from "../pages/athlete/AthleteDashboard";
 import { DailyLoadPage } from "../pages/athlete/DailyLoadPage";
+import { AthleteSessionsPage } from "../pages/athlete/AthleteSessionsPage";
+import { AthleteProfilePage } from "../pages/trainer/AthleteProfilePage";
 
 export function AppRouter() {
   return (
@@ -101,7 +103,7 @@ export function AppRouter() {
           element={
             <ProtectedRoute>
               <RoleRoute role="athlete">
-                <div>Sesiones atleta — próximamente</div>
+                <AthleteSessionsPage/>
               </RoleRoute>
             </ProtectedRoute>
           }
@@ -111,7 +113,7 @@ export function AppRouter() {
           element={
             <ProtectedRoute>
               <RoleRoute role="athlete">
-                <div>Perfil atleta — próximamente</div>
+                <AthleteProfilePage/>
               </RoleRoute>
             </ProtectedRoute>
           }
