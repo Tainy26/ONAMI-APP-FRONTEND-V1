@@ -1,6 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import "./sidebar.css";
+import onamiLogoLight from "../../assets/onamiLogoLight.png";
 
 /* NAVEGACIÓN TRAINER */
 const trainerNavItems = [
@@ -59,8 +60,14 @@ export function Sidebar() {
 
       {/* MARCA */}
       <div className="sidebar-brand">
-        <div className="sidebar-brand-icon">⚡</div>
-        <span className="sidebar-brand-name">ONAMI</span>
+        <div className="sidebar-brand-icon">
+          <img
+              src={onamiLogoLight}
+              alt="Onami Logo"
+              style={{ width: "100%", height: "100%", objectFit: "contain" }}
+            />
+        </div>
+        <span className="sidebar-brand-name">ON A MISSION</span>
       </div>
 
       {/* NAVEGACIÓN PRINCIPAL */}

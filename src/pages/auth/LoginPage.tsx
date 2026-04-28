@@ -3,7 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { useTheme } from "../../hooks/useTheme";
 import { FaApple, FaGoogle } from "react-icons/fa";
-import onamiLogo from "../../assets/onamilogo.png";
+import onamiLogoLight from "../../assets/onamiLogoLight.png";
+import onamiLogoDark from "../../assets/onamiLogoDark.png";
 import "./login.css";
 
 export function LoginPage() {
@@ -55,13 +56,13 @@ export function LoginPage() {
         <div className="auth-logo">
           <div className="auth-logo-icon">
             <img
-              src={onamiLogo}
+              src={theme === "dark" ? onamiLogoLight : onamiLogoDark}
               alt="Onami Logo"
               style={{ width: "100%", height: "100%", objectFit: "contain" }}
             />
           </div>
           <div className="auth-logo-text">
-            <h2>Bienvenido de nuevo</h2>
+            <h2>ONAMI</h2>
             <p>Introduce tus datos para entrar.</p>
           </div>
         </div>
