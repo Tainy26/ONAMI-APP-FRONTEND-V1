@@ -99,7 +99,7 @@ export function TrainerDashboardPage() {
     <div className="trainer-layout">
       <Sidebar />
 
-      <main className="trainer-main">
+      <main className="trainer-main trainer-dashboard" >
 
         {/* TOPBAR */}
         <div className="trainer-topbar">
@@ -112,13 +112,13 @@ export function TrainerDashboardPage() {
               className="btn-secondary"
               onClick={() => navigate("/trainer/teams")}
             >
-              + Equipo
+              Crear Equipo
             </button>
             <button
               className="btn-primary"
               onClick={() => navigate("/trainer/sessions")}
             >
-              + Sesión
+              Crear Sesión
             </button>
           </div>
         </div>
@@ -137,27 +137,24 @@ export function TrainerDashboardPage() {
             {/* STAT CARDS */}
             <div className="stat-cards">
               <div className="stat-card" style={{ borderTopColor: "var(--color-accent)" }}>
-                <div className="stat-card-label">Equipos</div>
+                <div className="stat-card-label">Equipos activos</div>
                 <div className="stat-card-value" style={{ color: "var(--color-accent)" }}>
                   {dashboard.summary.total_teams}
                 </div>
-                <div className="stat-card-sub">activos</div>
               </div>
 
               <div className="stat-card" style={{ borderTopColor: "var(--color-success)" }}>
-                <div className="stat-card-label">Atletas</div>
+                <div className="stat-card-label">Total de Athletas</div>
                 <div className="stat-card-value" style={{ color: "var(--color-success)" }}>
                   {dashboard.summary.total_athletes}
                 </div>
-                <div className="stat-card-sub">en total</div>
               </div>
 
               <div className="stat-card" style={{ borderTopColor: "var(--color-warning)" }}>
-                <div className="stat-card-label">Alertas fatiga</div>
+                <div className="stat-card-label">Alertas de fatiga</div>
                 <div className="stat-card-value" style={{ color: "var(--color-warning)" }}>
                   {dashboard.summary.total_alerts_high_fatigue}
                 </div>
-                <div className="stat-card-sub">últimos 3 días</div>
               </div>
             </div>
 
@@ -218,7 +215,7 @@ export function TrainerDashboardPage() {
                           <div className="team-meta">
                             {team.athletes_count} atletas ·{" "}
                             {team.adherence.athletes_with_load_today}/
-                            {team.adherence.athletes_total} registraron hoy
+                            {team.adherence.athletes_total} Han registrado sus datos hoy
                           </div>
                           <div className="team-fatigue-bar-wrap">
                             <div
