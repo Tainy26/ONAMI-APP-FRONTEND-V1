@@ -53,7 +53,8 @@
 }
 .trainer-page-sub {
   font-size: 13px;
-  color: var(--color-text-muted);
+  color: var(--color-text-light);
+  font-weight: 500;
 }
 .trainer-topbar-actions {
   display: flex;
@@ -62,8 +63,8 @@
 
 /* BOTONES */
 .trainer-dashboard .btn-primary {
-  background: var(--color-accent);
-  color: #fff;
+  background: var(--color-surface);
+  color: var(--color-text-light);
   border: none;
   border-radius: var(--radius-md);
   padding: 9px 16px;
@@ -76,12 +77,12 @@
 }
 .trainer-dashboard .btn-primary:hover {
   background: var(--color-accent-hover);
-  color: #fff;
+  color: var(--color-text);
 }
 
 .trainer-dashboard .btn-secondary {
-  background: var(--color-accent);
-  color: #fff;
+  background: var(--color-surface);
+  color: var(--color-text-light);
   border: none;
   border-radius: var(--radius-md);
   padding: 9px 16px;
@@ -93,7 +94,38 @@
 }
 .trainer-dashboard .btn-secondary:hover {
   background: var(--color-accent-hover);
-  color: #fff;
+  color: var(--color-text);
+}
+
+.modal-actions .btn-primary{
+  color: var(--color-text-light);
+  background-color: var(--color-accent-hover);
+  box-shadow: none;
+  font-weight: 600;
+  font-size: 12px;
+  border-radius: var(--radius-md);
+
+}
+
+.modal-actions .btn-primary:hover{
+  background-color: var(--color-accent);
+  box-shadow: none;
+  color: var(--color-text)
+}
+
+.modal-actions .btn-secondary{
+  color: var(--color-text-light);
+  background-color: var(--color-surface-2);
+  box-shadow: none;
+  font-weight: 600;
+  font-size: 12px;
+  border-radius: var(--radius-md);
+
+}
+
+.modal-actions .btn-secondary:hover{
+  box-shadow: none;
+  color: var(--color-text);
 }
 
 /* STAT CARDS */

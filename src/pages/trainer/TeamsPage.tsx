@@ -170,7 +170,7 @@ export function TeamsPage() {
     <div className="trainer-layout">
       <Sidebar />
 
-      <main className="trainer-main">
+      <main className="trainer-main trainer-teams">
 
         {/* TOPBAR */}
         <div className="trainer-topbar">
@@ -180,12 +180,6 @@ export function TeamsPage() {
               Gestiona tus equipos y atletas
             </p>
           </div>
-          <button
-            className="btn-primary"
-            onClick={() => setShowCreateModal(true)}
-          >
-            + Nuevo equipo
-          </button>
         </div>
 
         {/* CARGA */}
@@ -390,7 +384,7 @@ export function TeamsPage() {
               </div>
 
               <div className="form-group" style={{ marginTop: "14px" }}>
-                <label>Descripción (opcional)</label>
+                <label>Descripción</label>
                 <input
                   type="text"
                   placeholder="Ej: Categoría Sub-23"

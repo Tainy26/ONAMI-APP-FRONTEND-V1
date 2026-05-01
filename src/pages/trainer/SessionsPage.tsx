@@ -346,7 +346,7 @@ export function SessionsPage() {
     <div className="trainer-layout">
       <Sidebar />
 
-      <main className="trainer-main">
+      <main className="trainer-main trainer-sessions">
 
         {/* TOPBAR */}
         <div className="trainer-topbar">
@@ -481,19 +481,19 @@ export function SessionsPage() {
                         <div className="exercises-wrap">
                           <div className="exercises-head">
                             <span className="exercises-title">
-                              Ejercicios de la sesión
+                              Ejercicios de la Sesión
                             </span>
                             <button
                               className="exercises-add-btn"
                               onClick={() => setAddExerciseSession(session.id)}
                             >
-                              + Añadir ejercicio
+                              + Añadir Ejercicio
                             </button>
                           </div>
 
                           {sessionExercises.length === 0 ? (
                             <div className="exercises-empty">
-                              No hay ejercicios — añade el primero
+                              No hay ejercicios — Añade el primero
                             </div>
                           ) : (
                             sessionExercises.map((ex, idx) => (
@@ -649,7 +649,7 @@ export function SessionsPage() {
         <div className="modal-overlay" onClick={() => setEditSession(null)}>
           <div className="modal" onClick={(e) => e.stopPropagation()}>
             <h2 className="modal-title">Editar sesión</h2>
-            <p className="modal-sub">Modifica los datos de la sesión.</p>
+            <p className="modal-sub">Modifica los datos de la Sesión</p>
             <form onSubmit={handleEditSession}>
               {editSessionError && (
                 <p className="form-error" style={{ marginBottom: "14px" }}>
@@ -692,7 +692,7 @@ export function SessionsPage() {
                 </div>
               </div>
               <div className="form-group" style={{ marginTop: "12px" }}>
-                <label>Notas (opcional)</label>
+                <label>Notas</label>
                 <input
                   type="text"
                   placeholder="Observaciones..."
@@ -729,7 +729,7 @@ export function SessionsPage() {
           <div className="modal" onClick={(e) => e.stopPropagation()}>
             <h2 className="modal-title">Eliminar sesión</h2>
             <p className="modal-sub">
-              ¿Estás seguro? Se eliminarán también todos sus ejercicios.
+            Se eliminarán también todos los Ejercicios de la Sesión
             </p>
             <div className="modal-actions">
               <button
@@ -740,10 +740,6 @@ export function SessionsPage() {
               </button>
               <button
                 className="btn-primary"
-                style={{
-                  background: "var(--color-error)",
-                  boxShadow: "0 4px 12px rgba(239,68,68,0.3)",
-                }}
                 onClick={handleDelete}
                 disabled={deleteLoading}
               >
@@ -769,7 +765,7 @@ export function SessionsPage() {
                 </p>
               )}
               <div className="form-group">
-                <label>Nombre del ejercicio</label>
+                <label>Nombre del Ejercicio</label>
                 <input
                   type="text"
                   placeholder="Ej: Sentadilla con barra"
@@ -920,7 +916,7 @@ export function SessionsPage() {
                         ...editExerciseData,
                         duration_minutes: e.target.value,
                       })
-                    }
+                    }kk
                   />
                 </div>
                 <div className="form-group">

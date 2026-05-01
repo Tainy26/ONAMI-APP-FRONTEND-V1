@@ -120,7 +120,7 @@ export function ProfilePage() {
     <div className="trainer-layout">
       <Sidebar />
 
-      <main className="trainer-main">
+      <main className="trainer-main trainer-profile">
 
         {/* TOPBAR */}
         <div className="trainer-topbar">

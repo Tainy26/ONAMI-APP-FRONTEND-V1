@@ -10,8 +10,9 @@
   border: 1px solid var(--color-border);
   border-radius: 20px;
   padding: 4px 12px;
-  font-size: 10px;
-  color: var(--color-text-muted);
+  height: 25px;
+  font-size: 11px;
+  color: var(--color-text-light);
   font-family: inherit;
   transition: border-color 0.2s ease;
 }
@@ -26,14 +27,15 @@
   flex-shrink: 0;
 }
 .athletes-filter-pill {
+  height: 28px;
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 10px;
   font-weight: 600;
   cursor: pointer;
   border: 1px solid transparent;
-  background: transparent;
-  color: var(--color-text-muted);
+  background: var(--color-surface-2);
+  color: var(--color-text);
   font-family: inherit;
   transition: all 0.15s ease;
 }
@@ -42,9 +44,11 @@
 }
 .athletes-filter-pill.active {
   background: rgba(232, 82, 10, 0.15);
-  color: var(--color-accent);
+  color: var(--color-text);
   border-color: rgba(232, 82, 10, 0.25);
 }
+
+
 
 /* LAYOUT TABLA + DETALLE */
 .athletes-layout {
@@ -158,10 +162,10 @@
 /* TD */
 .athlete-td {
   font-size: 12px;
-  color: var(--color-text);
+  color: var(--color-text-light);
 }
 .athlete-td.muted {
-  color: var(--color-text-muted);
+  color: var(--color-text-light);
 }
 .athlete-fatigue {
   font-size: 13px;

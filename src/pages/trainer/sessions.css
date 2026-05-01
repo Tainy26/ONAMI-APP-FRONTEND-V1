@@ -1,3 +1,24 @@
+/* BOTONES */
+.trainer-sessions .btn-primary {
+  background: var(--color-surface);
+  color: var(--color-text-light);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 9px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: none;
+  width: 130px;
+}
+.trainer-sessions .btn-primary:hover {
+  background: var(--color-accent-hover);
+  color: var(--color-text);
+}
+
+
 /* FILTROS */
 .sessions-filters {
   display: flex;
@@ -5,13 +26,15 @@
   gap: 6px;
   flex-wrap: wrap;
 }
+
 .sessions-filter-select {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 20px;
   padding: 4px 12px;
-  font-size: 10px;
-  color: var(--color-text-muted);
+  height: 25px;
+  font-size: 11px;
+  color: var(--color-text-light);
   font-family: inherit;
   transition: border-color 0.2s ease;
 }
@@ -26,14 +49,15 @@
   flex-shrink: 0;
 }
 .sessions-filter-pill {
+  height: 28px;
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 10px;
   font-weight: 600;
   cursor: pointer;
   border: 1px solid transparent;
-  background: transparent;
-  color: var(--color-text-muted);
+  background: var(--color-surface-2);
+  color: var(--color-text);
   font-family: inherit;
   transition: all 0.15s ease;
 }
@@ -42,7 +66,7 @@
 }
 .sessions-filter-pill.active {
   background: rgba(232, 82, 10, 0.15);
-  color: var(--color-accent);
+  color: var(--color-text);
   border-color: rgba(232, 82, 10, 0.25);
 }
 
@@ -51,6 +75,10 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+}
+
+.empty-state{
+  color: var(--color-text-muted);
 }
 
 /* SEPARADOR DE FECHA */
@@ -63,12 +91,12 @@
 .sessions-date-sep-line {
   flex: 1;
   height: 1px;
-  background: var(--color-surface-2);
+  background: var(--color-text-light);
 }
 .sessions-date-sep-text {
   font-size: 10px;
   font-weight: 700;
-  color: var(--color-border);
+  color: var(--color-text-light);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   white-space: nowrap;
@@ -77,7 +105,6 @@
 /* FILA DE SESIÓN */
 .session-row {
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 10px 14px;
   display: flex;
@@ -140,6 +167,10 @@
 .session-meta {
   font-size: 10px;
   color: var(--color-text-muted);
+}
+
+.form-group > input{
+  color: var(--color-text-light);
 }
 
 /* BADGE */

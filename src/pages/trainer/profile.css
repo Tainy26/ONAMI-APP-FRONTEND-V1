@@ -109,6 +109,7 @@
   gap: 16px;
 }
 .profile-form-title {
+  text-transform: uppercase;
   font-size: 13px;
   font-weight: 700;
   color: var(--color-text);
@@ -121,6 +122,15 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
+}
+.trainer-profile .form-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text);
+  padding-top: 15px;
+}
+.profile-form-card{
+  gap: 0px;
 }
 
 /* TEXTAREA */
@@ -152,7 +162,7 @@
   display: flex;
   justify-content: flex-end;
   gap: 10px;
-  padding-top: 4px;
+  padding-top: 15px;
 }
 
 /* SUCCESS */
@@ -163,4 +173,40 @@
   padding: 10px 14px;
   color: var(--color-success);
   font-size: 13px;
+}
+
+/* BOTONES */
+.trainer-profile .btn-primary {
+  background: var(--color-accent-hover);
+  color: var(--color-text-light);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 9px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  width: 60%;
+  box-shadow: none;
+}
+.trainer-profile .btn-primary:hover {
+  background: var(--color-accent);
+  color: var(--color-text);
+}
+
+.trainer-profile .btn-secondary {
+  background: var(--color-surface-2);
+  color: var(--color-text-light);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 9px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  width: 40%;
+  box-shadow: none;
+}
+.trainer-profile .btn-secondary:hover {
+  color: var(--color-text);
 }
