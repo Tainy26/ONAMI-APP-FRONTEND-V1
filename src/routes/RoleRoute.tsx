@@ -11,7 +11,7 @@ interface Props {
 export function RoleRoute({ children, role }: Props) {
     const { user } = useAuth();
     if (user?.role !== role){
-        return <Navigate to="/unauthorized" replace />;
+        return <Navigate to="/login" replace />;
     }
     return <>{children}</>
 }

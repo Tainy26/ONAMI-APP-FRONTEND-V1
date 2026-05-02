@@ -189,3 +189,35 @@
   color: var(--color-success);
   font-size: 13px;
 }
+
+/* ======== RESPONSIVE ======== */
+
+@media (max-width: 768px) {
+  /* Layout 2 col → 1 col */
+  .athlete-profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  /* Formulario: campos en 1 columna */
+  .athlete-profile-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Acciones centradas */
+  .athlete-profile-form-actions {
+    flex-direction: column;
+  }
+  .athlete-profile-form-actions .btn-primary,
+  .athlete-profile-form-actions .btn-secondary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .athlete-identity-card {
+    padding: 20px 16px;
+  }
+  .athlete-profile-form-card {
+    padding: 16px;
+  }
+}

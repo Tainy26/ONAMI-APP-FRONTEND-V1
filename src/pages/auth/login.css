@@ -270,3 +270,29 @@ html.light .auth-card {
 .auth-bottom a:hover {
   text-decoration: underline;
 }
+
+/* ======== RESPONSIVE ======== */
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 32px 20px;
+    border-radius: var(--radius-md);
+    margin: 0 8px;
+  }
+
+  .auth-logo {
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .theme-toggle {
+    top: 12px;
+    right: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .auth-card {
+    padding: 24px 16px;
+  }
+}

@@ -344,3 +344,36 @@
   font-size: 10px;
   margin-left: 4px;
 }
+
+/* ======== RESPONSIVE ======== */
+
+@media (max-width: 900px) {
+  /* Layout: métricas y historial en 1 columna en tablet */
+  .dailyload-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Metric cards: 2 columnas se mantienen (son compactas) */
+  .metric-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Day selector más accesible */
+  .day-btn {
+    min-width: 40px;
+    padding: 6px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* En pantallas muy pequeñas, metric cards en 1 col */
+  .metric-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .spark-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}

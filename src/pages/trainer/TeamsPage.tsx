@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Sidebar } from "../../components/layout/Sidebar";
+import { LuPencil, LuTrash2 } from "react-icons/lu";
 import api from "../../lib/api";
 import "./trainer.css";
 import "./teams.css";
@@ -225,7 +226,7 @@ export function TeamsPage() {
                         }}
                         title="Editar"
                       >
-                        ✏️
+                        <LuPencil size={14} />
                       </button>
                       <button
                         className="icon-btn danger"
@@ -235,7 +236,7 @@ export function TeamsPage() {
                         }}
                         title="Eliminar"
                       >
-                        🗑
+                        <LuTrash2 size={14} />
                       </button>
                     </div>
                   </div>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Sidebar } from "../../components/layout/Sidebar";
+import { LuCheck } from "react-icons/lu";
 import api from "../../lib/api";
 import "./athlete.css";
 import "./dailyload.css";
@@ -332,7 +333,7 @@ export function DailyLoadPage() {
           <div className="athlete-registered-banner">
             <div className="athlete-registered-dot" />
             <span className="athlete-registered-text">
-              ✓ Ya registraste tu carga hoy — puedes actualizarla si quieres
+              <LuCheck size={16} /> Ya registraste tu carga hoy — puedes actualizarla si quieres
             </span>
           </div>
         )}

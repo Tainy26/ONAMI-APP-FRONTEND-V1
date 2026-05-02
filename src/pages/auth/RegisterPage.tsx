@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { useTheme } from "../../hooks/useTheme";
+import { LuSun, LuMoon, LuZap } from "react-icons/lu";
 import api from "../../lib/api";
 import "./login.css";
 
@@ -11,6 +12,7 @@ export function RegisterPage() {
 
   const [formData, setFormData] = useState({
     name: "",
+    last_name: "",
     email: "",
     password: "",
     role: "athlete" as "athlete" | "trainer",
@@ -30,7 +32,12 @@ export function RegisterPage() {
     setIsLoading(true);
 
     try {
-      await api.post("/auth/register", formData);
+      const firstName = formData.name.trim().split(/\s+/)[0];
+      const firstLastName = formData.last_name.trim().split(/\s+/)[0];
+      await api.post("/auth/register", {
+        ...formData,
+        name: `${firstName} ${firstLastName}`,
+      });
       await login(formData.email, formData.password, false);
     } catch (err: any) {
       setError(err?.response?.data?.error || "Error al crear la cuenta");
@@ -43,13 +50,13 @@ export function RegisterPage() {
     <div className="auth-page">
 
       <button className="theme-toggle" onClick={toggleTheme}>
-        {theme === "dark" ? "☀️" : "🌙"}
+        {theme === "dark" ? <LuSun size={16} /> : <LuMoon size={16} />}
       </button>
 
       <div className="auth-card">
 
         <div className="auth-logo">
-          <div className="auth-logo-icon">⚡</div>
+          <div className="auth-logo-icon"><LuZap size={18} /></div>
           <div className="auth-logo-text">
             <h2>Crear cuenta</h2>
             <p>Únete a ONAMI hoy.</p>
@@ -64,9 +71,20 @@ export function RegisterPage() {
             <label>Nombre</label>
             <input
               type="text"
-              placeholder="Tu nombre"
+              placeholder="Tu primer nombre"
               value={formData.name}
               onChange={(e) => handleChange("name", e.target.value)}
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Apellido</label>
+            <input
+              type="text"
+              placeholder="Tu primer apellido"
+              value={formData.last_name}
+              onChange={(e) => handleChange("last_name", e.target.value)}
               required
             />
           </div>

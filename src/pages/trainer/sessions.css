@@ -273,3 +273,46 @@
   color: var(--color-text-muted);
   text-align: center;
 }
+
+/* ======== RESPONSIVE ======== */
+
+@media (max-width: 768px) {
+  /* Botón principal ocupa más espacio */
+  .trainer-sessions .btn-primary {
+    width: auto;
+    flex: 1;
+  }
+
+  /* Filtros se envuelven */
+  .sessions-filters {
+    gap: 5px;
+  }
+
+  /* Fila de sesión: información más compacta */
+  .session-row {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .session-name {
+    font-size: 11px;
+  }
+
+  /* Acciones más accesibles al tacto */
+  .session-actions .icon-btn {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sessions-filters {
+    flex-wrap: wrap;
+  }
+  .sessions-filter-sep {
+    display: none;
+  }
+  .exercise-meta {
+    display: none;
+  }
+}

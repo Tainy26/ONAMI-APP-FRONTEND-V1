@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Sidebar } from "../../components/layout/Sidebar";
+import { LuEye, LuCheck, LuPlus } from "react-icons/lu";
 import api from "../../lib/api";
 import "./athlete.css";
 import "./athlete-sessions.css";
@@ -321,7 +322,7 @@ export function AthleteSessionsPage() {
                                   toggleExpand(session.id);
                                 }}
                               >
-                                👁
+                                <LuEye size={14} />
                               </button>
 
                               {/* ICONO + o ✓ — solo cuando NO expandida */}
@@ -335,7 +336,7 @@ export function AthleteSessionsPage() {
                                       navigate("/athlete/daily-load");
                                     }}
                                   >
-                                    ✓
+                                    <LuCheck size={14} />
                                   </div>
                                 ) : (
                                   <div
@@ -346,7 +347,7 @@ export function AthleteSessionsPage() {
                                       navigate("/athlete/daily-load");
                                     }}
                                   >
-                                    ＋
+                                    <LuPlus size={14} />
                                   </div>
                                 )
                               )}
@@ -406,7 +407,7 @@ export function AthleteSessionsPage() {
                                   <div>
                                     <div className="arb-title">
                                       {isRegistered
-                                        ? "✓ Carga registrada ese día"
+                                        ? <><LuCheck size={14} /> Carga registrada ese día</>
                                         : "¿Cómo te fue en esta sesión?"}
                                     </div>
                                     <div className="arb-sub">

@@ -3,7 +3,7 @@ import { getToken } from "./storage";
 
 //CREAMOS UNA INSTANCIA DE AXIOS APUNTANDO AL BACKEND
 const api = axios.create({
-    baseURL: "http://localhost:3000",
+    baseURL: import.meta.env.VITE_API_URL ?? "http://localhost:3000",
 });
 
 /* INTERCEPTOR: SE EJECUTA ANTES DE CADA PETICIÓN, SU FUNCIÓN ES 

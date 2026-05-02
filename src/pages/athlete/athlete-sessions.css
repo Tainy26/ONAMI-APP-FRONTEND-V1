@@ -347,3 +347,47 @@
   color: var(--color-text-muted);
   font-size: 13px;
 }
+
+/* ======== RESPONSIVE ======== */
+
+@media (max-width: 768px) {
+  /* Próxima sesión */
+  .next-session-card {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+
+  /* Fila de sesión compacta */
+  .athlete-session-row {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  /* Banner registrar: apila en vertical */
+  .athlete-register-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .arb-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Touch targets más grandes */
+  .register-icon-btn,
+  .registered-icon-btn {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .athlete-sessions-filters {
+    flex-wrap: wrap;
+  }
+  .next-session-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

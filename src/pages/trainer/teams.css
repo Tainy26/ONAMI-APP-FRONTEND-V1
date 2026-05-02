@@ -354,3 +354,39 @@
   border-color: var(--color-accent);
   color: var(--color-accent);
 }
+
+/* ======== RESPONSIVE ======== */
+
+@media (max-width: 768px) {
+  /* Grid de 1 columna en mobile */
+  .teams-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Modal ocupa todo el ancho */
+  .modal-overlay {
+    padding: 16px;
+    align-items: flex-end;
+  }
+  .modal {
+    max-width: 100%;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding: 24px 20px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .modal-actions .btn-primary,
+  .modal-actions .btn-secondary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-card-new {
+    min-height: 140px;
+    padding: 24px;
+  }
+}

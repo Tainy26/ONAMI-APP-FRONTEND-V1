@@ -210,3 +210,128 @@
 .trainer-profile .btn-secondary:hover {
   color: var(--color-text);
 }
+
+/* ======== RESPONSIVE ======== */
+
+@media (max-width: 768px) {
+  /* Layout 2 col → 1 col */
+  .profile-layout {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* Identity card: horizontal en mobile para ahorrar espacio */
+  .profile-identity-card {
+    flex-direction: row;
+    align-items: center;
+    padding: 14px 16px;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  /* Avatar más pequeño */
+  .profile-big-avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  /* Info agrupada al lado del avatar */
+  .profile-name {
+    font-size: 13px;
+    text-align: left;
+    margin-bottom: 2px;
+  }
+  .profile-email {
+    font-size: 11px;
+    text-align: left;
+  }
+  .profile-role-badge {
+    font-size: 10px;
+    padding: 3px 10px;
+    align-self: flex-start;
+  }
+
+  /* Divider oculto en mobile */
+  .profile-divider {
+    display: none;
+  }
+
+  /* Stats en fila compacta */
+  .profile-stats-row {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 20px;
+    padding-top: 6px;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .profile-stat-value {
+    font-size: 16px;
+  }
+  .profile-stat-label {
+    font-size: 8px;
+  }
+
+  /* Joined pequeño */
+  .profile-joined {
+    font-size: 10px;
+    width: 100%;
+    text-align: left;
+    padding-top: 4px;
+  }
+
+  /* Formulario compacto */
+  .profile-form-card {
+    padding: 14px;
+    gap: 0;
+  }
+
+  .profile-form-title {
+    font-size: 11px;
+    padding-bottom: 10px;
+    margin-bottom: 4px;
+  }
+
+  .trainer-profile .form-group label {
+    padding-top: 10px;
+    font-size: 11px;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
+  /* Campos en 1 columna */
+  .profile-form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* Textarea más bajo */
+  .profile-form-card textarea {
+    height: 60px;
+    font-size: 13px;
+    padding: 9px 12px;
+  }
+
+  /* Botones lado a lado */
+  .profile-form-actions {
+    flex-direction: row;
+    gap: 8px;
+    padding-top: 10px;
+  }
+  .trainer-profile .btn-primary {
+    width: 60%;
+    font-size: 11px;
+    padding: 8px 12px;
+  }
+  .trainer-profile .btn-secondary {
+    width: 40%;
+    font-size: 11px;
+    padding: 8px 12px;
+  }
+}

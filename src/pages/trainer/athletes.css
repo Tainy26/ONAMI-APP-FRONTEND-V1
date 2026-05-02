@@ -316,3 +316,69 @@
   color: var(--color-text-muted);
   margin-top: 2px;
 }
+
+/* ======== RESPONSIVE ======== */
+
+@media (max-width: 900px) {
+  /* Ocultar panel detalle en tablet — solo en desktop */
+  .athlete-detail-panel {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Filtros */
+  .athletes-filters {
+    gap: 5px;
+  }
+  .athletes-filter-sep {
+    display: none;
+  }
+
+  /* Layout apilado */
+  .athletes-layout {
+    flex-direction: column;
+  }
+
+  /* Tabla con scroll horizontal */
+  .athletes-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Columnas simplificadas en mobile: Nombre | Fatiga | Acciones */
+  .athletes-table-head,
+  .athlete-row {
+    grid-template-columns: 2fr 1fr 64px;
+  }
+
+  /* Ocultar columnas intermedias */
+  .athletes-th:nth-child(3),
+  .athletes-th:nth-child(4),
+  .athlete-row > .athlete-td:nth-child(3),
+  .athlete-row > .athlete-td:nth-child(4) {
+    display: none;
+  }
+
+  /* Panel detalle ocupa todo el ancho cuando está visible */
+  .athlete-detail-panel {
+    display: flex;
+    width: 100%;
+  }
+
+  /* Touch targets más grandes */
+  .athlete-actions .icon-btn {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .athletes-table-head,
+  .athlete-row {
+    padding: 10px 12px;
+  }
+  .athlete-email {
+    display: none;
+  }
+}

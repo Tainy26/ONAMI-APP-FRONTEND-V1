@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Sidebar } from "../../components/layout/Sidebar";
 import { useAuth } from "../../context/AuthContext";
+import { LuCheck } from "react-icons/lu";
 import api from "../../lib/api";
 import "./athletes.css";
 import "./athlete-profile.css";
@@ -22,13 +23,11 @@ interface AthleteStats {
 }
 
 /* HELPER — iniciales */
-function initials(name: string): string {
-  return name
-    .split(" ")
-    .map((n) => n[0])
-    .join("")
-    .toUpperCase()
-    .slice(0, 2);
+function initials(name: string | undefined): string {
+  if (!name) return "??";
+  const parts = name.trim().split(/\s+/);
+  if (parts.length >= 2) return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+  return parts[0].slice(0, 2).toUpperCase();
 }
 
 export function AthleteProfilePage() {
@@ -298,7 +297,7 @@ async function loadData() {
                 )}
                 {success && (
                   <p className="athlete-profile-success">
-                    ✓ Perfil actualizado correctamente
+                    <LuCheck size={16} /> Perfil actualizado correctamente
                   </p>
                 )}
 

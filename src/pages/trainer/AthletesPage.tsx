@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Sidebar } from "../../components/layout/Sidebar";
 import { LoadChart } from "../../components/charts/LoadChart";
+import { LuEye, LuTrash2, LuUser } from "react-icons/lu";
 import api from "../../lib/api";
 import "./trainer.css";
 import "./athletes.css";
@@ -362,7 +363,7 @@ export function AthletesPage() {
                             selectAthlete(athlete);
                           }}
                         >
-                          👁
+                          <LuEye size={14} />
                         </button>
                         <button
                           className="icon-btn danger"
@@ -372,7 +373,7 @@ export function AthletesPage() {
                             setDeleteAthlete(athlete);
                           }}
                         >
-                          🗑
+                          <LuTrash2 size={14} />
                         </button>
                       </div>
                     </div>
@@ -385,7 +386,7 @@ export function AthletesPage() {
             <div className="athlete-detail-panel">
               {!selected ? (
                 <div className="detail-empty">
-                  <div className="detail-empty-icon">👤</div>
+                  <div className="detail-empty-icon"><LuUser size={18} /></div>
                   <p>Selecciona un atleta para ver su detalle</p>
                 </div>
               ) : statsLoading ? (

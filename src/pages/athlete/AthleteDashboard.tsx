@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { Sidebar } from "../../components/layout/Sidebar";
 import { LoadChart } from "../../components/charts/LoadChart";
+import { LuAlertTriangle, LuCheck } from "react-icons/lu";
 import api from "../../lib/api";
 import "./athlete.css";
 
@@ -148,7 +149,7 @@ export function AthleteDashboardPage() {
                 }} />
                 <div>
                   <div className="alert-banner-title" style={{ color: "var(--color-error)" }}>
-                    ⚠ Fatiga elevada detectada
+                    <LuAlertTriangle size={16} /> Fatiga elevada detectada
                   </div>
                   <div className="alert-banner-sub">
                     Has registrado fatiga alta los últimos días. Habla con tu entrenador.
@@ -179,7 +180,7 @@ export function AthleteDashboardPage() {
               <div className="athlete-registered-banner">
                 <div className="athlete-registered-dot" />
                 <span className="athlete-registered-text">
-                  ✓ Carga diaria registrada hoy
+                  <LuCheck size={16} /> Carga diaria registrada hoy
                 </span>
               </div>
             )}

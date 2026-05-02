@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Sidebar } from "../../components/layout/Sidebar";
+import { LuEye, LuPencil, LuTrash2 } from "react-icons/lu";
 import api from "../../lib/api";
 import "./trainer.css";
 import "./sessions.css";
@@ -451,7 +452,7 @@ export function SessionsPage() {
                                 : {}
                             }
                           >
-                            👁
+                            <LuEye size={14} />
                           </button>
                           <button
                             className="icon-btn"
@@ -461,7 +462,7 @@ export function SessionsPage() {
                               openEditSession(session);
                             }}
                           >
-                            ✏️
+                            <LuPencil size={14} />
                           </button>
                           <button
                             className="icon-btn danger"
@@ -471,7 +472,7 @@ export function SessionsPage() {
                               setDeleteSession(session);
                             }}
                           >
-                            🗑
+                            <LuTrash2 size={14} />
                           </button>
                         </div>
                       </div>
@@ -517,7 +518,7 @@ export function SessionsPage() {
                                     className="icon-btn"
                                     onClick={() => openEditExercise(ex, session.id)}
                                   >
-                                    ✏️
+                                    <LuPencil size={14} />
                                   </button>
                                   <button
                                     className="icon-btn danger"
@@ -533,7 +534,7 @@ export function SessionsPage() {
                                       }));
                                     }}
                                   >
-                                    🗑
+                                    <LuTrash2 size={14} />
                                   </button>
                                 </div>
                               </div>
@@ -916,7 +917,7 @@ export function SessionsPage() {
                         ...editExerciseData,
                         duration_minutes: e.target.value,
                       })
-                    }kk
+                    }
                   />
                 </div>
                 <div className="form-group">

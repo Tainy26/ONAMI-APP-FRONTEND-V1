@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { useTheme } from "../../hooks/useTheme";
 import { FaApple, FaGoogle } from "react-icons/fa";
+import { LuSun, LuMoon } from "react-icons/lu";
 import onamiLogoLight from "../../assets/onamiLogoLight.png";
 import onamiLogoDark from "../../assets/onamiLogoDark.png";
 import "./login.css";
@@ -48,7 +49,7 @@ export function LoginPage() {
     <div className="auth-page">
 
       <button className="theme-toggle" onClick={toggleTheme}>
-        {theme === "dark" ? "☀️" : "🌙"}
+        {theme === "dark" ? <LuSun size={16} /> : <LuMoon size={16} />}
       </button>
 
       <div className="auth-card">
