@@ -1,5 +1,4 @@
-import  { useState, useEffect } from "react";
-import { flushSync } from "react-dom";
+import { useState, useEffect } from "react";
 
 type Theme = "dark" | "light";
 

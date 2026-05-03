@@ -382,3 +382,9 @@
     display: none;
   }
 }
+
+/* ======== LIGHT MODE OVERRIDES ======== */
+html.light .athletes-filter-select { color: #0a0a0a; }
+html.light .athlete-actions .icon-btn { color: #0a0a0a; }
+html.light .athlete-avatar { color: #f5f5f5; }
+html.light .detail-empty-icon { color: #0a0a0a; opacity: 1; }

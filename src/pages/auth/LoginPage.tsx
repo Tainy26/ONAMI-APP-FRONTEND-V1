@@ -29,6 +29,7 @@ export function LoginPage() {
         { replace: true }
       );
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   async function handleSubmit(e: React.FormEvent) {

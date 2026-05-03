@@ -335,3 +335,9 @@
     padding: 8px 12px;
   }
 }
+
+/* ======== LIGHT MODE OVERRIDES ======== */
+html.light .trainer-profile .btn-primary { background: var(--color-accent); color: #ffffff; }
+html.light .trainer-profile .btn-primary:hover { background: var(--color-accent-hover); color: #ffffff; }
+html.light .trainer-profile .btn-secondary { color: #0a0a0a; }
+html.light .trainer-profile .btn-secondary:hover { color: var(--color-accent); }

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { Sidebar } from "../../components/layout/Sidebar";
 import { LoadChart } from "../../components/charts/LoadChart";
-import { LuAlertTriangle, LuCheck } from "react-icons/lu";
+import { LuTriangleAlert, LuCheck } from "react-icons/lu";
 import api from "../../lib/api";
 import "./athlete.css";
 
@@ -70,7 +70,7 @@ function formatDate(dateStr: string) {
 }
 
 export function AthleteDashboardPage() {
-  const { user } = useAuth();
+  useAuth();
   const navigate = useNavigate();
 
   const [dashboard, setDashboard] = useState<DashboardData | null>(null);
@@ -80,10 +80,12 @@ export function AthleteDashboardPage() {
 
   useEffect(() => {
     loadData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     loadChartData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chartRange]);
 
   async function loadData() {
@@ -149,7 +151,7 @@ export function AthleteDashboardPage() {
                 }} />
                 <div>
                   <div className="alert-banner-title" style={{ color: "var(--color-error)" }}>
-                    <LuAlertTriangle size={16} /> Fatiga elevada detectada
+                    <LuTriangleAlert size={16} /> Fatiga elevada detectada
                   </div>
                   <div className="alert-banner-sub">
                     Has registrado fatiga alta los últimos días. Habla con tu entrenador.

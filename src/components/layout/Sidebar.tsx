@@ -1,6 +1,6 @@
-import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import { useTheme } from "../../hooks/useTheme";
 import {
   LuLayoutDashboard,
   LuUsers,
@@ -12,6 +12,7 @@ import {
 } from "react-icons/lu";
 import "./sidebar.css";
 import onamiLogoLight from "../../assets/onamiLogoLight.png";
+import onamiLogoDark from "../../assets/onamiLogoDark.png";
 
 /* NAVEGACIÓN TRAINER */
 const trainerNavItems = [
@@ -40,6 +41,7 @@ const athleteAccountItems = [
 
 export function Sidebar() {
   const { user, logout } = useAuth();
+  const { theme } = useTheme();
   const navigate = useNavigate();
 
   const navItems = user?.role === "trainer" ? trainerNavItems : athleteNavItems;
@@ -64,7 +66,7 @@ export function Sidebar() {
         <div className="sidebar-brand">
           <div className="sidebar-brand-icon">
             <img
-              src={onamiLogoLight}
+              src={theme === "dark" ? onamiLogoLight : onamiLogoDark}
               alt="Onami Logo"
               style={{ width: "100%", height: "100%", objectFit: "contain" }}
             />

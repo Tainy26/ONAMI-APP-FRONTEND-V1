@@ -97,6 +97,7 @@ export function AthletesPage() {
 
   useEffect(() => {
     loadData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function loadData() {
@@ -240,7 +241,7 @@ export function AthletesPage() {
     <div className="trainer-layout">
       <Sidebar />
 
-      <main className="trainer-main">
+      <main className="trainer-main trainer-athletes">
 
         {/* TOPBAR */}
         <div className="trainer-topbar">

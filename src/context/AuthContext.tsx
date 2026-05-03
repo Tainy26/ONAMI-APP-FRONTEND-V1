@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { saveToken, getToken, removeToken } from "../lib/storage";
+import { saveToken, getToken, removeToken, isTokenExpired } from "../lib/storage";
 import api from "../lib/api";
 
 /* TIPOS TYPESCRIPT */
@@ -33,7 +33,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         async function checkSession() {
             const token = getToken();
 
-            if (!token) {
+            if (!token || isTokenExpired(token)) {
+                removeToken();
                 setIsLoading(false);
                 return;
             }

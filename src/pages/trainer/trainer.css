@@ -9,7 +9,7 @@
 .trainer-layout::before {
   content: '';
   position: fixed;
-  inset: -20px;
+  inset: -60px;
   background-image: url('../../assets/login-bg.JPG');
   background-size: cover;
   background-position: center;
@@ -444,3 +444,12 @@
     font-size: 1.6rem;
   }
 }
+
+/* ======== LIGHT MODE OVERRIDES ======== */
+html.light .trainer-layout { background: #080808; }
+html.light .trainer-page-title { color: #f5f5f5; }
+html.light .trainer-dashboard .btn-primary { background: #ffffff; color: #0a0a0a; }
+html.light .trainer-dashboard .btn-primary:hover { background: var(--color-accent); color: #ffffff; }
+html.light .trainer-dashboard .btn-secondary { background: #ffffff; color: #0a0a0a; }
+html.light .trainer-dashboard .btn-secondary:hover { background: var(--color-accent); color: #ffffff; }
+

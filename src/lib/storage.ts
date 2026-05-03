@@ -19,3 +19,13 @@ export function removeToken(): void {
     localStorage.removeItem(TOKEN_KEY);
     sessionStorage.removeItem(TOKEN_KEY);
 }
+
+// Devuelve true si el token JWT ha expirado (sin llamar al servidor)
+export function isTokenExpired(token: string): boolean {
+    try {
+        const payload = JSON.parse(atob(token.split(".")[1]));
+        return typeof payload.exp === "number" && payload.exp * 1000 < Date.now();
+    } catch {
+        return true;
+    }
+}

@@ -316,3 +316,8 @@
     display: none;
   }
 }
+
+/* ======== LIGHT MODE OVERRIDES ======== */
+html.light .trainer-sessions .btn-primary { background: #ffffff; color: #0a0a0a; }
+html.light .trainer-sessions .btn-primary:hover { background: var(--color-accent); color: #ffffff; }
+html.light .sessions-filter-select { color: #0a0a0a; }

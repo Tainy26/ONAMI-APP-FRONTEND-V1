@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { useTheme } from "../../hooks/useTheme";
-import { LuSun, LuMoon, LuZap } from "react-icons/lu";
+import { LuSun, LuMoon, LuUser, LuClipboardList } from "react-icons/lu";
 import api from "../../lib/api";
+import onamiLogoLight from "../../assets/onamiLogoLight.png";
+import onamiLogoDark from "../../assets/onamiLogoDark.png";
 import "./login.css";
 
 export function RegisterPage() {
@@ -56,10 +58,16 @@ export function RegisterPage() {
       <div className="auth-card">
 
         <div className="auth-logo">
-          <div className="auth-logo-icon"><LuZap size={18} /></div>
+          <div className="auth-logo-icon">
+            <img
+              src={theme === "dark" ? onamiLogoLight : onamiLogoDark}
+              alt="ONAMI"
+              style={{ width: "100%", height: "100%", objectFit: "contain" }}
+            />
+          </div>
           <div className="auth-logo-text">
-            <h2>Crear cuenta</h2>
-            <p>Únete a ONAMI hoy.</p>
+            <h2>CREAR CUENTA</h2>
+            <p>Únete a ONAMI</p>
           </div>
         </div>
 
@@ -112,14 +120,25 @@ export function RegisterPage() {
           </div>
 
           <div className="form-group">
-            <label>Soy...</label>
-            <select
-              value={formData.role}
-              onChange={(e) => handleChange("role", e.target.value)}
-            >
-              <option value="athlete">Atleta</option>
-              <option value="trainer">Entrenador</option>
-            </select>
+            <label>Profesión</label>
+            <div className="role-picker">
+              <button
+                type="button"
+                className={`role-option${formData.role === "athlete" ? " selected" : ""}`}
+                onClick={() => handleChange("role", "athlete")}
+              >
+                <LuUser size={18} strokeWidth={2} />
+                Atleta
+              </button>
+              <button
+                type="button"
+                className={`role-option${formData.role === "trainer" ? " selected" : ""}`}
+                onClick={() => handleChange("role", "trainer")}
+              >
+                <LuClipboardList size={18} strokeWidth={2} />
+                Entrenador
+              </button>
+            </div>
           </div>
 
           {formData.role === "athlete" && (

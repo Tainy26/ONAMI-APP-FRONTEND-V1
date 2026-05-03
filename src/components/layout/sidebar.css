@@ -270,7 +270,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-text-muted);
+    color: var(--color-text);
     font-size: 15px;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -352,3 +352,26 @@
     color: var(--color-accent);
   }
 }
+
+/* ======== LIGHT MODE OVERRIDES ======== */
+html.light .sidebar {
+  background: rgba(255, 255, 255, 0.87);
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+html.light .sidebar-item-icon { color: #ffffff; }
+html.light .sidebar-item { color: #050505; }
+html.light .sidebar-item.active { color: var(--color-accent); }
+html.light .sidebar-item.active .sidebar-item-icon { color: var(--color-accent); }
+html.light .mobile-header-brand { color: #ffffff; }
+html.light .mobile-header-logout { color: #ffffff; }
+html.light .mobile-nav-icon {
+  color: #ffffff;
+  filter: grayscale(0) brightness(1);
+}
+html.light .sidebar-user-avatar { 
+  background-color: #1a1a1a;
+  color: #ffffff; 
+}
+html.light .sidebar-logout{ color: #050505; }
+
+

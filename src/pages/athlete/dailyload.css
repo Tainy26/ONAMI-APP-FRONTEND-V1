@@ -108,6 +108,10 @@
   display: block;
   margin-bottom: 6px;
 }
+
+html.light .dailyload-notes label{
+  color: #f5f5f5;
+}
 .dailyload-notes textarea {
   background: var(--color-surface);
   border: 1.5px solid var(--color-border);
