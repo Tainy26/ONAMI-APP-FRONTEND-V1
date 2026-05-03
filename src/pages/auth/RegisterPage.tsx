@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { useTheme } from "../../hooks/useTheme";
 import { LuSun, LuMoon, LuUser, LuClipboardList } from "react-icons/lu";
@@ -11,6 +11,7 @@ import "./login.css";
 export function RegisterPage() {
   const { login } = useAuth();
   const { theme, toggleTheme } = useTheme();
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -41,6 +42,7 @@ export function RegisterPage() {
         name: `${firstName} ${firstLastName}`,
       });
       await login(formData.email, formData.password, false);
+      navigate(formData.role === "trainer" ? "/trainer/dashboard" : "/athlete/dashboard");
     } catch (err: any) {
       setError(err?.response?.data?.error || "Error al crear la cuenta");
     } finally {
