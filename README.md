@@ -1,73 +1,109 @@
-# React + TypeScript + Vite
+# ONAMI — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Plataforma de gestión deportiva para entrenadores y atletas.
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=flat&logo=vite&logoColor=white)
+![Vercel](https://img.shields.io/badge/Desplegado_en-Vercel-000000?style=flat&logo=vercel&logoColor=white)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Características
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🔐 **Autenticación con JWT** — Login y registro con roles diferenciados
+- 👨‍💼 **Panel del entrenador** — Gestión de equipos, atletas y sesiones
+- 🏃 **Panel del atleta** — Registro de carga diaria y visualización de sesiones
+- 📊 **Gráficas interactivas** — Visualización de datos con Chart.js
+- 🌙 **Modo oscuro/claro** — Tema adaptable según preferencia
+- 🔒 **Rutas protegidas** — Acceso restringido por rol
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tecnologías
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| Tecnología | Uso |
+|---|---|
+| React 19 | Framework de interfaz |
+| TypeScript | Tipado estático |
+| Vite | Bundler y servidor de desarrollo |
+| React Router v7 | Navegación entre páginas |
+| Axios | Peticiones HTTP a la API |
+| Chart.js | Gráficas y visualización de datos |
+| React Icons | Iconografía |
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Instalación y uso
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/Tainy26/ONAMI-APP-FRONTEND-V1.git
+cd ONAMI-APP-FRONTEND-V1
+
+# Instalar dependencias
+npm install
+
+# Crear variables de entorno
+echo "VITE_API_URL=http://localhost:3000" > .env.local
+
+# Iniciar en desarrollo
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Abre `http://localhost:5173` en tu navegador.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📁 Estructura del proyecto
+
 ```
+FRONTEND/
+├── src/
+│   ├── pages/
+│   │   ├── auth/           # Login y registro
+│   │   ├── trainer/        # Dashboard, equipos, atletas, sesiones
+│   │   └── athlete/        # Dashboard, carga diaria, sesiones
+│   ├── components/
+│   │   ├── charts/         # Componentes de gráficas
+│   │   └── layout/         # Navbar, sidebar y layout general
+│   ├── context/
+│   │   └── AuthContext.tsx # Estado global de autenticación
+│   ├── routes/
+│   │   ├── Router.tsx      # Definición de rutas
+│   │   ├── ProtectedRoute  # Rutas que requieren sesión
+│   │   └── RoleRoute       # Rutas restringidas por rol
+│   ├── hooks/
+│   │   └── useTheme.ts     # Hook para el tema oscuro/claro
+│   └── lib/
+│       ├── api.ts          # Instancia de Axios configurada
+│       └── storage.ts      # Gestión del token en localStorage
+├── .env.production         # Variables para producción
+└── vite.config.ts          # Configuración de Vite
+```
+
+---
+
+## 🗺️ Navegación
+
+```
+/login
+├── /register
+├── /trainer/dashboard
+│   ├── /trainer/teams
+│   ├── /trainer/sessions
+│   ├── /trainer/athletes
+│   └── /trainer/profile
+└── /athlete/dashboard
+    ├── /athlete/daily-load
+    ├── /athlete/sessions
+    └── /athlete/profile
+```
+
+---
+
+## 🌐 Producción
+
+La aplicación está desplegada en Vercel y conectada a la API REST del backend:
+
+🔗 **[https://onami-app-frontend-v1.vercel.app](https://onami-app-frontend-v1.vercel.app)**
